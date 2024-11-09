@@ -19,13 +19,13 @@ for entry in entries:
     rating = entry.find('div', class_='nbl-ratingCompact__valueInteger').text
     info_about_films = entry.find('div', class_='nbl-poster__propertiesInfo').text
 
-    data.append({'Название фильма' : film_name, 'Рэйтинг': rating, 'Информация о фильме': info_about_films})
+    data.append({'Название фильма' : film_name, 'Рейтинг': rating, 'Информация о фильме': info_about_films})
 
     if len(entries) == 0:
         break
 
 
-df = pd.DataFrame(data, columns=['Название фильма', 'Рэйтинг', 'Информация о фильме'])
+df = pd.DataFrame(data, columns=['Название фильма', 'Рейтинг', 'Информация о фильме'])
 df.to_excel('data_Homework_23.xlsx')
 
 print(data)
